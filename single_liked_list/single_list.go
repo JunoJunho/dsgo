@@ -12,3 +12,25 @@ func size(first node) int {
 	}
 	return _size
 }
+
+func last(first node) node {
+	var _ret node = first
+	for iter := first; iter.next != nil; iter = *iter.next {
+		_ret = *iter.next
+	}
+	return _ret
+}
+
+//
+// func addFirst(first node, target node) {
+//
+// }
+//
+// func addLast(first node, target node) {
+//
+// }
+
+func removeFirst(first node) node {
+	var _ret node
+	return _ret
+}
