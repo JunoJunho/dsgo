@@ -21,10 +21,13 @@ func last(first node) node {
 	return _ret
 }
 
-//
-// func addFirst(first node, target node) {
-//
-// }
+func addFirst(first node, target node) node {
+	var _first node = first
+	target.next = &_first // Now target is the first of the node!
+
+	return target
+}
+
 //
 // func addLast(first node, target node) {
 //
