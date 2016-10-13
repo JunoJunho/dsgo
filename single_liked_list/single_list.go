@@ -28,10 +28,13 @@ func addFirst(first node, target node) node {
 	return target
 }
 
-//
-// func addLast(first node, target node) {
-//
-// }
+func addLast(first node, target node) {
+	var _last *node = nil
+	for iter := first; iter.next != nil; iter = *iter.next {
+		_last = iter.next
+	}
+	_last.next = &target
+}
 
 func removeFirst(first node) node {
 	var _ret node

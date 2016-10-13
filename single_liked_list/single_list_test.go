@@ -38,3 +38,16 @@ func TestAddFirst(t *testing.T) {
 		t.Errorf("AddFirst must return 0!! not %d", new_list.data)
 	}
 }
+
+func TestAddLast(t *testing.T) {
+	var first = node{1, nil}
+	var second = node{2, nil}
+	var new_last = node{3, nil}
+	first.next = &second
+
+	addLast(first, new_last)
+	var last_data = last(first)
+	if last_data.data != 3 {
+		t.Errorf("Last is 3!! not %d", last_data.data)
+	}
+}
