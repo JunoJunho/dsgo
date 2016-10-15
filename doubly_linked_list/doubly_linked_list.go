@@ -16,3 +16,11 @@ func size(head *node) int {
 	}
 	return i
 }
+
+func last(head *node) *node {
+	var target *node = nil
+	for iter := head; iter.next != nil; iter = iter.next {
+		target = iter.next
+	}
+	return target
+}
