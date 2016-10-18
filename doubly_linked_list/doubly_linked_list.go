@@ -44,3 +44,11 @@ func removeFirst(head *node) *node {
 	second.prev = nil
 	return second
 }
+
+func removeLast(head *node) {
+	var before_node *node = nil
+	for iter := head; iter.next != nil; iter = iter.next {
+		before_node = iter
+	}
+	before_node.next = nil
+}
