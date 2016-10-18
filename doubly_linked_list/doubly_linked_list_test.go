@@ -33,6 +33,35 @@ func TestLast(t *testing.T) {
 
 	var _ret = last(&head)
 	if _ret.data != 2 {
-		t.Errorf("The size must be 2! not %d", _ret.data)
+		t.Errorf("The last must be 2! not %d", _ret.data)
+	}
+}
+
+func TestAddFirst(t *testing.T) {
+	var head = node{0, nil, nil}
+	var second = node{1, nil, nil}
+	var third = node{2, nil, nil}
+
+	head.next = &second
+	second.prev = &head
+
+	var new_head = addFirst(&head, &third)
+	if new_head.data != 2 {
+		t.Errorf("The first data should be 2! not %d", new_head.data)
+	}
+}
+
+func TestAddLast(t *testing.T) {
+	var head = node{0, nil, nil}
+	var second = node{1, nil, nil}
+	var third = node{2, nil, nil}
+
+	head.next = &second
+	second.prev = &head
+
+	addLast(&head, &third)
+	var last_node = last(&head)
+	if last_node.data != 2 {
+		t.Errorf("The first data should be 2! not %d", last_node.data)
 	}
 }

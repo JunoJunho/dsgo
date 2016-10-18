@@ -24,3 +24,17 @@ func last(head *node) *node {
 	}
 	return target
 }
+
+func addFirst(head *node, target *node) *node {
+	head.prev = target
+	target.next = head
+
+	return target // New head
+}
+
+func addLast(head *node, target *node) {
+
+	var last_node = last(head)
+	last_node.next = target
+
+}
