@@ -38,3 +38,9 @@ func addLast(head *node, target *node) {
 	last_node.next = target
 
 }
+
+func removeFirst(head *node) *node {
+	var second = head.next
+	second.prev = nil
+	return second
+}

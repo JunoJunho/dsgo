@@ -65,3 +65,16 @@ func TestAddLast(t *testing.T) {
 		t.Errorf("The first data should be 2! not %d", last_node.data)
 	}
 }
+
+func TestRemoveFirst(t *testing.T) {
+	var head = node{0, nil, nil}
+	var second = node{1, nil, nil}
+	head.next = &second
+	second.prev = &head
+
+	var new_head = removeFirst(&head)
+
+	if new_head.data != 1 {
+		t.Errorf("The first data should be 1! not %d", new_head.data)
+	}
+}
