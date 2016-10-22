@@ -1,23 +1,23 @@
-package single_list
+package single_linked_list
 
 import "testing"
 
 func TestSingleLinkedList(t *testing.T) {
-	var first = node{1, nil}
-	var second = node{2, nil}
-	var third = node{3, nil}
+	var first = Node{1, nil}
+	var second = Node{2, nil}
+	var third = Node{3, nil}
 	first.next = &second
 	second.next = &third
 
-	if size(first) != 3 {
-		t.Errorf("Size is 3!! not %d", size(first))
+	if Size(first) != 3 {
+		t.Errorf("Size is 3!! not %d", Size(first))
 	}
 }
 
 func TestLast(t *testing.T) {
-	var first = node{1, nil}
-	var second = node{2, nil}
-	var third = node{3, nil}
+	var first = Node{1, nil}
+	var second = Node{2, nil}
+	var third = Node{3, nil}
 	first.next = &second
 	second.next = &third
 	ret := last(first)
@@ -27,9 +27,9 @@ func TestLast(t *testing.T) {
 }
 
 func TestAddFirst(t *testing.T) {
-	var first = node{1, nil}
-	var second = node{2, nil}
-	var new_first = node{0, nil}
+	var first = Node{1, nil}
+	var second = Node{2, nil}
+	var new_first = Node{0, nil}
 	first.next = &second
 
 	var new_list = addFirst(first, new_first)
@@ -40,9 +40,9 @@ func TestAddFirst(t *testing.T) {
 }
 
 func TestAddLast(t *testing.T) {
-	var first = node{1, nil}
-	var second = node{2, nil}
-	var new_last = node{3, nil}
+	var first = Node{1, nil}
+	var second = Node{2, nil}
+	var new_last = Node{3, nil}
 	first.next = &second
 
 	addLast(first, new_last)
